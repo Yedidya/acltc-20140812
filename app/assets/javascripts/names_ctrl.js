@@ -1,7 +1,13 @@
 (function () {
   "use strict";
 
-  // TODO: add a namesCtrl
-  // TODO: use the contents of people.js inside of the names controller. DO NOT copy and paste.
+  angular.module("app").controller("namesCtrl", function($scope){ 
+    $scope.people = people;
+    $scope.clicked = true;
 
+    $scope.toggle = function(person){
+      console.log(person)
+      person.show = !person.show;
+    };
+  });
 })();

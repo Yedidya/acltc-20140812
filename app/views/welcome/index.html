@@ -1,16 +1,15 @@
-<!-- TODO: add ng-app="app" to the next line -->
-<div>
+<div ng-app="app">
+  {{1+1}}
 
-  <!-- TODO: add ng-controller="namesCtrl" to the next line -->
-  <div>
-    <button>Hide Details</button>
-    <ul>
-      <!-- TODO: add ng-repeat to the next line -->
-      <li>
-      Bob
-      <div class="details">
-        Small batch salvia Marfa chillwave delectus, odio forage art party.
-      </div>
+  <div ng-controller="namesCtrl">
+
+      <li ng-repeat="person in people" class="names">
+        <a ng-click="toggle(person)"><strong>{{person.name}}</strong></a>
+
+      <div ng-if="person.show" class="details">
+        {{person.details}}
+      </div> 
+
       </li>
     </ul>
 
